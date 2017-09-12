@@ -1,0 +1,31 @@
+<h3>TODO LIST</h3>
+<form action="/task-done" method="post">
+{{#todo}}
+
+    <div>
+      <h2>-------------------------------------------------</h2>
+      <input type="checkbox" name="checked" value="{{id}}">
+      <h1>{{date}}</h1>
+      <p>{{task}}</p>
+      <p>{{done}}</p>
+      <h2>-------------------------------------------------</h2>
+    </div>
+  {{else}}
+      <p> 등록된 일정이 없습니다.</p>
+{{/todo}}
+<button type="submit">done</button>
+</form>
+
+<h1>-------------------------------------------------</h1>
+<legend>계획 작성</legend>
+<form action="/task-register" method="post" autocomplete="on">
+    <div class="form-group">
+        <label>날짜</label>
+        <input type="date" name="date" class="form-control" >
+    </div>
+    <div class="form-group">
+        <label>할 일</label>
+        <textarea name="task" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
